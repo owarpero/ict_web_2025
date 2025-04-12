@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Хурс Павел" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>lr1 - Документация по предмету web</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "lr1";
+        var mkdocs_page_input_path = "lr1/index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Документация по предмету web
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">lr1</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">Обзор</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Основные возможности</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">Технический стек</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">Модели данных</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#user">Пользователь (User)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#task">Задача (Task)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#time-entry">Учет времени (Time Entry)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#task-assignment">Назначение задачи (Task Assignment)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#api-endpoints">API Endpoints</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">Управление пользователями</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">Управление задачами</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_7">Учет времени</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_8">Назначения задач</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_9">Аутентификация</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_10">Конфигурация базы данных</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_11">Функции безопасности</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_12">Структура проекта</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pr1/">pr1</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pr2/">pr2</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../pr3/">pr3</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Документация по предмету web</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">lr1</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="time-manager-api">Документация Time Manager API</h1>
+<h2 id="_1">Обзор</h2>
+<p>Time Manager API - это приложение на базе FastAPI для управления задачами, учета времени и назначений пользователей. Система обеспечивает функциональность аутентификации пользователей, управления задачами, отслеживания времени и назначения задач на основе ролей.</p>
+<h2 id="_2">Основные возможности</h2>
+<ul>
+<li>Аутентификация пользователей с помощью JWT</li>
+<li>Управление задачами</li>
+<li>Учет времени</li>
+<li>Распределение задач на основе ролей</li>
+<li>Управление пользователями</li>
+</ul>
+<h2 id="_3">Технический стек</h2>
+<ul>
+<li><strong>Фреймворк</strong>: FastAPI</li>
+<li><strong>База данных</strong>: PostgreSQL</li>
+<li><strong>ORM</strong>: SQLModel</li>
+<li><strong>Миграции</strong>: Alembic</li>
+</ul>
+<h2 id="_4">Модели данных</h2>
+<h3 id="user">Пользователь (User)</h3>
+<ul>
+<li><code>id</code>: Первичный ключ</li>
+<li><code>username</code>: Уникальное имя пользователя</li>
+<li><code>email</code>: Уникальный email</li>
+<li><code>hashed_password</code>: Зашифрованный пароль</li>
+<li><code>bio</code>: Опциональная биография пользователя</li>
+</ul>
+<h3 id="task">Задача (Task)</h3>
+<ul>
+<li><code>id</code>: Первичный ключ</li>
+<li><code>title</code>: Название задачи (индексировано)</li>
+<li><code>description</code>: Опциональное описание задачи</li>
+<li><code>deadline</code>: Опциональный срок выполнения</li>
+<li><code>priority</code>: Уровень приоритета (1-высокий, 2-средний, 3-низкий)</li>
+<li><code>status</code>: Статус задачи (Ожидает, В процессе, Завершена)</li>
+<li><code>creator_id</code>: Ссылка на создателя задачи</li>
+</ul>
+<h3 id="time-entry">Учет времени (Time Entry)</h3>
+<ul>
+<li><code>id</code>: Первичный ключ</li>
+<li><code>task_id</code>: Ссылка на задачу</li>
+<li><code>user_id</code>: Ссылка на пользователя</li>
+<li><code>duration</code>: Продолжительность в минутах</li>
+<li><code>entry_date</code>: Дата создания записи</li>
+<li><code>comment</code>: Опциональный комментарий</li>
+</ul>
+<h3 id="task-assignment">Назначение задачи (Task Assignment)</h3>
+<ul>
+<li><code>id</code>: Первичный ключ</li>
+<li><code>task_id</code>: Ссылка на задачу</li>
+<li><code>user_id</code>: Ссылка на пользователя</li>
+<li><code>role</code>: Роль пользователя в задаче</li>
+</ul>
+<h2 id="api-endpoints">API Endpoints</h2>
+<h3 id="_5">Управление пользователями</h3>
+<pre><code class="language-http">POST /users/register - Регистрация нового пользователя
+POST /users/login - Аутентификация пользователя
+GET /users - Список всех пользователей
+GET /users/{user_id} - Получение данных пользователя
+PUT /users/{user_id}/password - Обновление пароля пользователя
+</code></pre>
+<h3 id="_6">Управление задачами</h3>
+<pre><code class="language-http">POST /tasks - Создание новой задачи
+GET /tasks - Список всех задач
+GET /tasks/{task_id} - Получение данных задачи
+PUT /tasks/{task_id} - Обновление задачи
+DELETE /tasks/{task_id} - Удаление задачи
+</code></pre>
+<h3 id="_7">Учет времени</h3>
+<pre><code class="language-http">POST /time-entries - Создание записи времени
+GET /time-entries - Список записей времени пользователя
+PUT /time-entries/{entry_id} - Обновление записи времени
+DELETE /time-entries/{entry_id} - Удаление записи времени
+</code></pre>
+<h3 id="_8">Назначения задач</h3>
+<pre><code class="language-http">POST /assignments - Назначение пользователя на задачу
+GET /assignments - Список всех назначений
+</code></pre>
+<h2 id="_9">Аутентификация</h2>
+<p>API использует JWT (JSON Web Token) для аутентификации. Для доступа к защищенным endpoint'ам:</p>
+<ol>
+<li>Войдите через <code>/users/login</code> для получения токена доступа</li>
+<li>Включите токен в заголовок запроса:</li>
+</ol>
+<pre><code class="language-http">Authorization: Bearer &lt;ваш_jwt_токен&gt;
+</code></pre>
+<h2 id="_10">Конфигурация базы данных</h2>
+<p>Конфигурация базы данных управляется через переменные окружения:</p>
+<ul>
+<li><code>POSTGRES_USER</code></li>
+<li><code>POSTGRES_PASSWORD</code></li>
+<li><code>POSTGRES_DB</code></li>
+<li><code>POSTGRES_SERVER</code></li>
+<li><code>POSTGRES_PORT</code></li>
+</ul>
+<h2 id="_11">Функции безопасности</h2>
+<ul>
+<li>Хеширование паролей с использованием SHA256</li>
+<li>Аутентификация через JWT токены</li>
+<li>Контроль доступа на основе ролей</li>
+<li>Срок действия токенов</li>
+<li>Защищенные endpoint'ы</li>
+</ul>
+<h2 id="_12">Структура проекта</h2>
+<pre><code>LR1/
+├── controllers/         # Обработчики API endpoint'ов
+├── models/             # Модели данных
+├── util/              # Служебные функции
+├── migrations/        # Миграции базы данных
+├── main.py           # Точка входа приложения
+├── connection.py     # Подключение к базе данных
+└── alembic.ini       # Конфигурация миграций
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../pr1/" class="btn btn-neutral float-right" title="pr1">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../pr1/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
